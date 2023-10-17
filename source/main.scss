@@ -1,0 +1,84 @@
+@use 'config/reset';
+@use 'config/variaveis';
+
+@mixin elementoform() {
+    padding: 8px;
+    display: block; /*um elemento embaixo do outro*/
+    width: 100%;
+    margin-bottom: 16px; /*distância entre um campo e outro*/
+}
+
+@function 
+
+body {
+    background-color: #eee;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto; /*para centralizar*/
+}
+
+header {
+    padding: 16px 0;
+    background-color: variaveis.$corPrincipal; /*importado do arquivo VARIAVEIS*/
+    text-align: center; /*centralizar o cabeçalho*/
+    color: #fff
+}
+
+.form-container {
+    height: calc(100vh - 70px); /*altura do viepoth=vh*/
+    display: flex; /*itens do container, um ao lado do outro*/
+    flex-direction: column; /*itens em colunas*/
+    align-items: center;
+    justify-content: center;
+    max-width: 760px;
+
+    h2 {
+        font-size: 48px;
+        text-align: center; /*centralizado*/
+    }
+
+    form {
+        width: 100%;
+        max-width: 480px;
+        margin-top: 40px; /*distância entre o formulario e a chamada*/
+        
+
+        label {
+            font-weight: bold; /*fonte acima dos campos*/
+            cursor: pointer; /*indica que o texto é clicável*/
+        }
+
+        input {
+            @include elementoform();
+            background-color: transparent; /* cor dos campos*/
+            border: none; /*remove as bordas*/
+            border-bottom: 3px solid variaveis.$corPrincipal; /*borda só na parte inferior*/
+        }
+
+        button {
+            @include elementoform();
+            background-color: variaveis.$corSecundaria;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            /*color: #fff;*/
+        }
+
+        
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+    body {
+        background-color: yellow;
+    }
+}
+
+
+medida alvo / medida atual do contexto
+medida alvo / 16
+
